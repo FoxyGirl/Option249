@@ -43,38 +43,6 @@
       </p>
    -->    
     </div>
-    <script>
-      'use strict';
-      var btn = document.getElementById('routeDHCP');
-      
-      btn.addEventListener('click', routeDHCP);
-      
-      function routeDHCP(){
-        var result = document.getElementById('hexroute');
-        var route = "0x";
-        
-        var addressVal = document.getElementById('dstaddress').value;
-        var addressArr = addressVal.split('.');
-        
-        var subnetnum = document.getElementById('subnetnum').value;
-        
-        var gateway = document.getElementById('gateway').value;
-        var gatewayArr = gateway.split('.');
-        
-        route +=  (+subnetnum).toString(16);
-        
-        for (var i=0; i < addressArr.length; i++) {
-          route +=  (+addressArr[i]).toString(16);
-        }
-        
-         for (var i=0; i < gatewayArr.length; i++) {
-          route +=  (+gatewayArr[i]).toString(16);
-        }
-        
-        
-        result.innerHTML = route;
-      }
-      
-    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>
