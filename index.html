@@ -9,7 +9,7 @@
     <div class="wrap">
       <p class="input-group">
           <label for="dstaddress">Адрес назначения</label>
-          <input type="text" id="dstaddress" name="dstaddress" placeholder="x.x.x.x">
+          <input type="text" id="dstaddress" name="dstaddress" placeholder="x.x.x.x" autofocus>
       </p>
       <p class="input-group">
           <label for="subnetnum">Подсеть</label>
@@ -44,16 +44,35 @@
    -->    
     </div>
     <script>
+      'use strict';
       var btn = document.getElementById('routeDHCP');
       
       btn.addEventListener('click', routeDHCP);
       
       function routeDHCP(){
         var result = document.getElementById('hexroute');
-        var address = document.getElementById('dstaddress').value;
+        var route = "0x";
+        
+        var addressVal = document.getElementById('dstaddress').value;
+        var addressArr = addressVal.split('.');
+        
+        var subnetnum = document.getElementById('subnetnum').value;
+        
+        var gateway = document.getElementById('gateway').value;
+        var gatewayArr = gateway.split('.');
+        
+        route +=  (+subnetnum).toString(16);
+        
+        for (var i=0; i < addressArr.length; i++) {
+          route +=  (+addressArr[i]).toString(16);
+        }
+        
+         for (var i=0; i < gatewayArr.length; i++) {
+          route +=  (+gatewayArr[i]).toString(16);
+        }
         
         
-        result.innerHTML = address + '  ' +typeof(address) + '  ' + (+address).toString(16);
+        result.innerHTML = route;
       }
       
     </script>
