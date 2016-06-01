@@ -1,0 +1,36 @@
+html, 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  width: 340px;
+  margin: 70px auto 0;
+}
+
+.input-group label {
+  display: inline-block;
+  vertical-align: top;
+  width: 135px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.input-group input,
+.input-group select {
+  display: inline-block;
+  vertical-align: top;
+  width: 175px;
+  padding: 5px;
+}
+
+.input-group > select {
+  width: 190px;
+}
+
+.result {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}

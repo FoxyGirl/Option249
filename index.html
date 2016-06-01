@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Option249</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <p class="input-group">
+          <label for="dstaddress">Адрес назначения</label>
+          <input type="text" id="dstaddress" name="dstaddress" placeholder="x.x.x.x">
+      </p>
+      <p class="input-group">
+          <label for="subnetnum">Подсеть</label>
+          <select id="subnetnum" name="subnetnum">
+              <option value="0">0/ (0.0.0.0)</option>
+              <option value="1">1/ (128.0.0.0)</option>
+              <option value="2">2/ (192.0.0.0)</option>
+              <option value="3">3/ (224.0.0.0)</option>
+              <option value="4">4/ (240.0.0.0)</option>
+              <option value="5">5/ (248.0.0.0)</option>
+          </select>
+      </p>
+      <p class="input-group">
+          <label for="gateway">Адрес шлюза</label>
+          <input type="text" id="gateway" name="gateway" placeholder="y.y.y.y">
+      </p>
+
+      <div class="result">
+        <p>Маршрут</p>
+        <p id="hexroute"></p>
+      </div>
+
+  <!-- 
+      <p class="input-group">
+          <label for="hexroute">Маршрут</label>
+          <input type="text" id="hexroute" name="hexroute" placeholder="0xHEX">
+      </p>
+   -->    
+    </div>
+    <script>
+      var result = document.getElementById('hexroute');
+      result.innerHTML = (16).toString(16);
+    </script>
+  </body>
+</html>
