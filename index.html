@@ -26,6 +26,10 @@
           <label for="gateway">Адрес шлюза</label>
           <input type="text" id="gateway" name="gateway" placeholder="y.y.y.y">
       </p>
+      
+      <p>
+        <button class="btn" type="button" id="routeDHCP">Рассчитать маршрут</button>
+      </p>
 
       <div class="result">
         <p>Маршрут</p>
@@ -40,8 +44,18 @@
    -->    
     </div>
     <script>
-      var result = document.getElementById('hexroute');
-      result.innerHTML = (16).toString(16);
+      var btn = document.getElementById('routeDHCP');
+      
+      btn.addEventListener('click', routeDHCP);
+      
+      function routeDHCP(){
+        var result = document.getElementById('hexroute');
+        var address = document.getElementById('dstaddress').value;
+        
+        
+        result.innerHTML = address + '  ' +typeof(address) + '  ' + (+address).toString(16);
+      }
+      
     </script>
   </body>
 </html>
