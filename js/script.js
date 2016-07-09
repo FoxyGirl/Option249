@@ -4,12 +4,61 @@
   createSelectOptions();
 
   btn.addEventListener('click', routeDHCP);
+  
+  var testData = [];
+  testData[0] = { 'addressVal' : '10.0.0.0' };
+  testData[1] = { 'addressVal' : '10.1.0.0' };
+  testData[2] = { 'addressVal' : '10.0.1.0' };
+  testData[3] = { 'addressVal' : '10.0.0.1' };
+  testData[4] = { 'addressVal' : '192.168.30.0' };
+  testData[5] = { 'addressVal' : '171.0.10.250' };
+  testData[6] = { 'addressVal' : '171.10.0.0' };
+    
+  for (var i=0; i < testData.length; i++) {
+    testAddress(testData[i].addressVal);
+  };
+  
+  function testAddress(addressVal) {
+    var addressArr = addressVal.split('.');
+    var result = '';
+    
+    console.log('addressArr 1 = ' + addressArr);
+    addressArr = cutArrNullEnd(addressArr);
+    console.log('addressArr 2 = ' + addressArr);
+        
+    for (var i=0; i < addressArr.length; i++) {
+      var addressCorrect = (+addressArr[i]).toString(16); 
+      addressCorrect = Str0L(addressCorrect, 2);
+      result +=  addressCorrect;
+    }
+    
+    console.log(addressVal);
+    console.log(result);
+    console.log('***********');
+    
+    return result;
+  }
+
+  
+  
+  function cutArrNullEnd(arr) {
+    for (var i = (arr.length - 1); i >=0; i--) {
+//      console.log('arr'+[i]+'= '+arr[i]);
+      if (1*arr[i] !== 0) {
+        return arr;
+      } else {
+        arr.splice(i, 1);
+      }
+    };
+    return arr;
+  }
+ 
 
   function routeDHCP(){
     var result = document.getElementById('hexroute');
-    var route = "0x";
-
     var addressVal = document.getElementById('dstaddress').value;
+    
+    var route = "0x";
     var addressArr = addressVal.split('.');
 
     var subnetnum = document.getElementById('subnetnum').value;

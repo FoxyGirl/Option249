@@ -7,6 +7,7 @@
   </head>
   <body>
     <div class="wrap">
+     <div class="routeDHCP">
       <p class="input-group">
           <label for="dstaddress">Адрес назначения</label>
           <input type="text" id="dstaddress" name="dstaddress" placeholder="x.x.x.x" autofocus>
@@ -25,18 +26,13 @@
       <p>
         <button class="btn" type="button" id="routeDHCP">Рассчитать маршрут</button>
       </p>
+    </div>
 
       <div class="result">
         <p>Маршрут</p>
         <p id="hexroute"></p>
       </div>
-
-  <!-- 
-      <p class="input-group">
-          <label for="hexroute">Маршрут</label>
-          <input type="text" id="hexroute" name="hexroute" placeholder="0xHEX">
-      </p>
-   -->    
+    
     </div>
     <script src="js/script.js"></script>
   </body>
