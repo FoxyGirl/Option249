@@ -46,25 +46,10 @@ body {
   margin: 5px 5% 10px;
 }
 
-.input-group label {
-  display: inline-block;
-  vertical-align: top;
-  width: 135px;
-  padding-right: 10px;
-  text-align: right;
+.hidden {
+  display: none;
 }
 
-.input-group input,
-.input-group select {
-  display: inline-block;
-  vertical-align: top;
-  width: 175px;
-  padding: 5px;
-}
-
-.input-group > select {
-  width: 190px;
-}
 
 .result {
   margin-top: 50px;  
@@ -77,9 +62,14 @@ body {
   min-height: 25px;
 }
 
+form p {
+  text-align: center;
+}
+
 .btn {
-  display: block;
+  display: inline-block;
   width: 200px;
   padding: 5px 10px;
-  margin: 40px auto 20px;
+  margin: 40px 50px 20px;
 }
+

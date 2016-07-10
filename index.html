@@ -31,8 +31,9 @@
          </div>
        </div>
      
-       <p>
+       <p id="buttons">
          <button class="btn" type="submit">Рассчитать маршрут</button>
+         <button class="btn" type="button" id="addRoute">Добавить</button>
        </p>
       </form>
       
@@ -41,6 +42,18 @@
         <p id="hexroute"></p>
       </div>
 
+   </div>
+    
+   <div class="route  clearfix hidden" id="templateRoute">
+     <div class="item  first">
+       <input type="text" name="dstaddress_" placeholder="x.x.x.x">
+     </div>
+     <div class="item">
+       <select name="subnetnum_"></select>
+     </div>
+     <div class="item">
+       <input type="text" name="gateway_" placeholder="y.y.y.y">
+     </div>
    </div>
      
 

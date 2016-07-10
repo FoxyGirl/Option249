@@ -1,9 +1,11 @@
 (function() {
   'use strict';
   var form = document.getElementById('routeDHCP');
+  var addRoute = document.getElementById('addRoute');
   
   createSelectOptions();
   form.addEventListener('submit', routeDHCP);
+  addRoute.addEventListener('click', addNewRoute);
  
   function arrToHex(addressVal) {
     var addressArr = addressVal.split('.');
@@ -60,6 +62,20 @@
     routeOut += arrToHex(gatewayVal).toUpperCase();    
 
     resultOut.innerHTML = routeOut;
+  }
+  
+  function addNewRoute(){
+    var numRoute = document.querySelectorAll('form > .route').length;
+    console.log('!!!!!' + numRoute);
+    
+    var newRoute = document.getElementById('templateRoute').cloneNode(true);
+    newRoute.removeAttribute('id');
+    newRoute.querySelector('[name^=dstaddress]').setAttribute('name', 'dstaddress_' + numRoute);
+    newRoute.querySelector('[name^=subnetnum]').setAttribute('name', 'subnetnum_' + numRoute);
+    newRoute.querySelector('[name^=gateway]').setAttribute('name', 'gateway_' + numRoute);
+    
+    newRoute.classList.remove('hidden');
+    form.insertBefore(newRoute, buttons);
   }
 
   // дополняет строку Val слева нулями до длины Len
