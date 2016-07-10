@@ -42,26 +42,20 @@
     var routeOut = "0x";
     
     var routes = document.querySelectorAll('.route');
-    console.log('routes= ' + JSON.stringify(routes));
-    var subnetnum = routes[0].querySelector('[name^=subnetnum]').value;
-    console.log('subnetnum= ' + subnetnum);
     
-    var addressVal = routes[0].querySelector('[name^=dstaddress]').value;;
-    //var addressVal = document.getElementById('dstaddress').value;
-
-    var subnetnum = routes[0].querySelector('[name^=subnetnum]').value;    
-    // var subnetnum = document.getElementById('subnetnum').value;
-    
-    var gatewayVal = routes[0].querySelector('[name^=gateway]').value;
-    //var gateway = document.getElementById('gateway').value;
-    
-    subnetnum = (+subnetnum).toString(16);
-    subnetnum = Str0L(subnetnum, 2);
+    for (var i = 0; i < routes.length; i++) {
+      var subnetnum = routes[i].querySelector('[name^=subnetnum]').value;
+      var addressVal = routes[i].querySelector('[name^=dstaddress]').value;;
+      var subnetnum = routes[i].querySelector('[name^=subnetnum]').value;  var gatewayVal = routes[i].querySelector('[name^=gateway]').value;
       
-    routeOut +=  subnetnum.toUpperCase();
-    routeOut += arrToHex(addressVal).toUpperCase();
-    routeOut += arrToHex(gatewayVal).toUpperCase();    
+      subnetnum = (+subnetnum).toString(16);
+      subnetnum = Str0L(subnetnum, 2);
 
+      routeOut +=  subnetnum.toUpperCase();
+      routeOut += arrToHex(addressVal).toUpperCase();
+      routeOut += arrToHex(gatewayVal).toUpperCase();
+    }
+    
     resultOut.innerHTML = routeOut;
   }
   
