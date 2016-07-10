@@ -18,7 +18,7 @@
         <h3>Адрес шлюза</h3>
       </div>
     </header>
-    <form action="" method="POST">
+    <form action="" method="POST" name="routeDHCP" id="routeDHCP">
        <div class="route  clearfix">
          <div class="item  first">
            <input type="text" name="dstaddress_0" placeholder="x.x.x.x">
@@ -30,10 +30,11 @@
            <input type="text" name="gateway_0" placeholder="y.y.y.y">
          </div>
        </div>
-     </form>
-     <p>
-        <button class="btn" type="submit" id="routeDHCP">Рассчитать маршрут</button>
-      </p>
+     
+       <p>
+         <button class="btn" type="submit">Рассчитать маршрут</button>
+       </p>
+      </form>
       
       <div class="result">
         <p>Маршрут</p>
