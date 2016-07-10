@@ -6,6 +6,7 @@
   createSelectOptions();
   form.addEventListener('submit', routeDHCP);
   addRoute.addEventListener('click', addNewRoute);
+  addRoute.click();
  
   function arrToHex(addressVal) {
     var addressArr = addressVal.split('.');
@@ -147,7 +148,7 @@
       oFrag.appendChild(option);
     }
     
-    document.querySelector('[name^=subnetnum]').appendChild(oFrag);
+    document.querySelector('#templateRoute select[name^=subnetnum]').appendChild(oFrag);
   }
   
   /*
