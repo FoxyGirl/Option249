@@ -4,12 +4,46 @@ body {
   padding: 0;
 }
 
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .wrap {
-  width: 340px;
+  width: 80%;
   margin: 70px auto 0;
-  padding: 20px;
+  padding: 10px;
   -webkit-box-shadow: 0 0 4px rgba(20,20,20,0.4);
   box-shadow: inset hoff voff blur color;
+}
+
+.item {
+  float: left;
+  width: 30%;
+  text-align: center;
+}
+
+.item h3 {
+  margin-top: 0;
+  font-size: 15px;
+  text-align: center;
+}
+
+.item.first {
+  width: 40%;
+}
+
+.route input,
+.route select {
+  width: 80%;
+  margin: 5px 5% 10px;
+  padding: 5px;
+}
+
+.route select {
+  width: 90%;
+  margin: 5px 5% 10px;
 }
 
 .input-group label {
@@ -45,7 +79,7 @@ body {
 
 .btn {
   display: block;
-  width: 100%;
+  width: 200px;
   padding: 5px 10px;
-  margin: 0 auto;
+  margin: 40px auto 20px;
 }
