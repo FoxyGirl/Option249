@@ -56,7 +56,7 @@ body {
 
 .route input:focus,
 .route select:focus {
-  background-color: #d0e6f4;
+  background-color: #d9f4fc;
 }
 
 .route select {
