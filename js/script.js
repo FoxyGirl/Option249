@@ -41,7 +41,7 @@
     var resultOut = document.getElementById('hexroute');
     var routeOut = "0x";
     
-    var routes = document.querySelectorAll('.route');
+    var routes = document.querySelectorAll('form .route');
     
     for (var i = 0; i < routes.length; i++) {
       var subnetnum = routes[i].querySelector('[name^=subnetnum]').value;
