@@ -46,7 +46,8 @@
     for (var i = 0; i < routes.length; i++) {
       var subnetnum = routes[i].querySelector('[name^=subnetnum]').value;
       var addressVal = routes[i].querySelector('[name^=dstaddress]').value;;
-      var subnetnum = routes[i].querySelector('[name^=subnetnum]').value;  var gatewayVal = routes[i].querySelector('[name^=gateway]').value;
+      var subnetnum = routes[i].querySelector('[name^=subnetnum]').value;  
+      var gatewayVal = routes[i].querySelector('[name^=gateway]').value;
       
       subnetnum = (+subnetnum).toString(16);
       subnetnum = Str0L(subnetnum, 2);
